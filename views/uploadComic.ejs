@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Comic</title>
+  <link rel="stylesheet" type="text/css" href="/public/styles.css">
+</head>
+<body>
+    <a href="/" id="logo-container">
+      <img src="/public/logo.png" alt="Logo" id="logo">
+    </a>
+    
+  <h1>Upload Comic</h1>
+
+  <% if (locals.errorMessage) { %>
+    <p class="error-message"><%= locals.errorMessage %></p>
+  <% } %>
+
+  <form id="uploadForm" action="/comics/upload" method="post" enctype="multipart/form-data">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
+
+    <label for="author_name">Author Name:</label>
+    <input type="text" id="author_name" name="author_name" required>
+
+    <label for="genre_name">Genre Name:</label>
+    <input type="text" id="genre_name" name="genre_name" required>
+
+    <label for="publication_date">Publication Date:</label>
+    <input type="date" id="publication_date" name="publication_date" required>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
+
+    <label for="comicFile">Comic File (PDF only):</label>
+    <input type="file" id="comicFile" name="comicFile" accept=".pdf" required>
+
+    <button type="submit">Upload Comic</button>
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ComicDex - Comic Details</title>
+   <link rel="stylesheet" type="text/css" href="/public/styles.css">
+</head>
+<body>
+
+   <a href="/" id="logo-container">
+      <img src="/public/logo.png" alt="Logo" id="logo">
+   </a>
+
+   <header class="header-banner">
+      <h1>Comic Details</h1>
+   </header>
+
+   <section class="main-content">
+      <h2><%= comic.title %></h2>
+   
+      <p>Author: <%= authorName %></p>
+      <p>Genre: <%= genreName %></p>
+      <p class="publication-date">Publication Date: <%= comic.publication_date.toLocaleDateString() %></p>
+      <p class="description">Description: <%= comic.description %></p>
+   
+      <p><a href="/comics/comicdetails/<%= comic.file_path %>" download class="button">Download Comic</a></p>
+
+      <form action="/comics/deletecomic/<%= comic.comicID %>" method="POST">
+         <button type="submit" class="button">Delete Comic</button>
+       </form>
+      <form action="/comics/updatecomic/<%= comic.comicID %>" method="GET">
+         <button type="submit" class="button">Update Comic</button>
+      </form>
+   </section>
+
+</body>
+</html>

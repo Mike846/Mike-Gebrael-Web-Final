@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ComicDex - Home</title>
+   <link rel="stylesheet" type="text/css" href="/public/styles.css">
+</head>
+<body>
+
+   <a href="/" id="logo-container">
+      <img src="/public/logo.png" alt="Logo" id="logo">
+   </a>
+
+   <header class="header-banner">
+      <h1>Welcome to ComicDex</h1>
+      <h2>Your Source for Awesome Comics</h2>
+   </header>
+
+   <section class="cat-fact-section">
+      <h3>Random Cat fact:</h3>
+      <p><%= catFact %></p>
+   </section>
+
+   <section class="search-section">
+      <form action="/search" method="GET">
+         <label for="searchQuery">Search for Comic:</label>
+         <input type="text" id="searchQuery" name="query" placeholder="Enter your search term">
+         <button type="submit">Search</button>
+      </form>
+   </section>
+
+   <nav class="navbar">
+      <ul>
+         <li><a href="/users/login">Login</a></li>
+         <li><a href="/users/register">Register</a></li>
+         <li><a href="/comics/upload">Upload Comic</a></li>
+      </ul>
+   </nav>
+
+   <section>
+      <h2>Featured Comics</h2>
+      <ul>
+         <% for (const comic of featuredComics) { %>
+            <li>
+               <h3><a href="/comics/comicdetails/<%= comic.comicID %>"><%= comic.title %></a></h3>
+            </li>
+         <% } %>
+      </ul>
+   </section>
+
+</body>
+</html>

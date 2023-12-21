@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Comic</title>
+  <link rel="stylesheet" type="text/css" href="/public/styles.css">
+</head>
+<body>
+  <a href="/" id="logo-container">
+    <img src="/public/logo.png" alt="Logo" id="logo">
+  </a>
+
+  <h1>Update Comic</h1>
+
+  <% if (locals.errorMessage) { %>
+    <p class="error-message"><%= locals.errorMessage %></p>
+  <% } %>
+
+  <form id="updateForm" action="/comics/updatecomic/<%= comic.comicID %>" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="<%= comic.title %>" required>
+
+    <label for="author_name">Author Name:</label>
+    <input type="text" id="author_name" name="author_name" value="<%= authorName %>" required>
+
+    <label for="genre_name">Genre Name:</label>
+    <input type="text" id="genre_name" name="genre_name" value="<%= genreName %>" required>
+
+    <label for="publication_date">Publication Date:</label>
+    <input type="date" id="publication_date" name="publication_date" value="<%= comic.publication_date.toISOString().split('T')[0] %>" required>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="4" required><%= comic.description %></textarea>
+
+    <button type="submit">Update Comic</button>
+  </form>
+</body>
+</html>

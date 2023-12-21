@@ -1,0 +1,115 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  line-height: 1.6;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+input,
+button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #800080;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #6a006a;
+}
+
+.navbar {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+a:hover {
+  background-color: #800080;
+}
+
+.header-banner, .navbar, section {
+  text-align: center;
+}
+
+section {
+  max-width: 600px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+#logo-link {
+  display: block;
+  float: right;
+  margin: 10px;
+}
+
+#logo {
+  width: 100px;
+  height: auto;
+}
+
+#logo-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}

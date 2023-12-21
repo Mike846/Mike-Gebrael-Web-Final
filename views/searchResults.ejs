@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results</title>
+  <link rel="stylesheet" type="text/css" href="/public/styles.css">
+  <style>
+    .description {
+      word-wrap: break-word;
+      max-width: 400px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      border-bottom: 1px solid red;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="/" id="logo-container">
+    <img src="/public/logo.png" alt="Logo" id="logo">
+  </a>
+
+  <h1>Search Results</h1>
+
+  <% if (searchResults.length > 0) { %>
+    <ul>
+      <% searchResults.forEach(comic => { %>
+        <li>
+          <h2><a href="/comics/comicdetails/<%= comic.comicID %>"><%= comic.title %></a></h2>
+          
+          <p class="description">Description: <%= comic.description %></p>
+        </li>
+      <% }); %>
+    </ul>
+  <% } else { %>
+    <p>No results found for '<%= query %>'</p>
+  <% } %>
+
+</body>
+</html>
