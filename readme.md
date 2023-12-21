@@ -52,4 +52,4 @@ Once the application is running, you can access ComicDex through your web browse
 
 ## GitHub Repository
 
-ComicDex GitHub Repository.
+<https://github.com/Mike846/Mike-Gebrael-Web-Final>
